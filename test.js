@@ -8,7 +8,8 @@ var positions = [[0, 0, -10], [-10, 0, 0], [0, 0, 10], [10, 10, 0]];
 for (var _i = 0, positions_1 = positions; _i < positions_1.length; _i++) {
     var position = positions_1[_i];
     var light = new THREE.DirectionalLight(0xffffff);
-    light.position.set.apply(light.position, position).normalize();
+    var x = position[0], y = position[1], z = position[2];
+    light.position.set(x, y, z).normalize();
     scene.add(light);
 }
 var geometry = new THREE.BoxGeometry(2.5, 3.5, .0115);

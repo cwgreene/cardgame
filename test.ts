@@ -6,10 +6,11 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-const positions = [[0,0,-10], [-10,0,0], [0,0,10], [10,10,0]]
+const positions = [[0,0,-10], [-10,0,0], [0,0,10], [10,10,0]];
 for (const position of positions) {
   const light = new THREE.DirectionalLight( 0xffffff );
-  light.position.set.apply(light.position, position ).normalize();
+  const [x, y, z] = position;
+  light.position.set(x, y, z).normalize();
   scene.add(light);
 }
 
