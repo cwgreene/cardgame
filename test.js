@@ -28,4 +28,12 @@ function render() {
     cube.rotation.y += 0.01;
     renderer.render(scene, camera);
 }
+document.onkeydown = function (event) {
+    if (event.key == 'w') {
+        camera.position.z -= .1;
+    }
+    if (event.key == 's') {
+        camera.position.z += .1;
+    }
+};
 render();
